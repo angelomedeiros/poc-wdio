@@ -5,10 +5,13 @@
   "license": "MIT",
   "scripts": {
     "test": "wdio wdio.conf.js",
-    "repl": "wdio repl chrome"
+    "repl": "wdio repl chrome",
+    "allure:generate": "allure generate reporters/allure --clean",
+    "allure:open": "allure open"
   },
   "dependencies": {},
   "devDependencies": {
+    "@wdio/allure-reporter": "^6.1.14",
     "@wdio/cli": "^6.1.17",
     "@wdio/concise-reporter": "^6.1.14",
     "@wdio/dot-reporter": "^6.1.14",

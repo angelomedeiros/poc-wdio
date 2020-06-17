@@ -126,7 +126,17 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
-  reporters: ['concise', ['json', { outputDir: './reporters/json' }]],
+  reporters: [
+    'concise',
+    ['json', { outputDir: './reporters/json' }],
+    [
+      'allure',
+      {
+        outputDir: './reporters/allure',
+        disableMochaHooks: true,
+      },
+    ],
+  ],
 
   //
   // Options to be passed to Mocha.
