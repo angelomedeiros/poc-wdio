@@ -51,6 +51,9 @@ exports.config = {
       maxInstances: 5,
       //
       browserName: 'chrome',
+      'goog:chromeOptions': {
+        args: ['--headless', '--disabled-gpu'],
+      },
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -123,7 +126,7 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
-  reporters: ['spec'],
+  reporters: ['dot'],
 
   //
   // Options to be passed to Mocha.
