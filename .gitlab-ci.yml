@@ -1,10 +1,8 @@
+image: selenium/standalone-firefox
+
 hello world:
-  services:
-    - node:14.4
-  image: selenium/standalone-firefox
   script:
     - ls -ltra
-    - curl http://localhost:4444
     - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     - sudo apt-get install -y nodejs
     - ls -ltra
