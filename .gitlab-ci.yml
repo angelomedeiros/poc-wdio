@@ -1,12 +1,10 @@
-image: selenium/standalone-firefox
+image: node:14.4
 
 hello world:
+  services:
+    - name: selenium/standalone-firefox
   script:
+    - curl http://localhost:4444
+    - yarn
+    - yarn test --hostname=selenium
     - ls -ltra
-    - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-    - sudo apt-get install -y nodejs
-    - ls -ltra
-    - npm i
-    - npm test
-    - ls -ltra
-    # - yarn test --hostname=selenium
