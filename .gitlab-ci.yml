@@ -4,6 +4,8 @@ hello world:
   services:
     - selenium/standalone-chrome
   script:
+    - uname -a
+    - lsb_release -a
     - docker
     - docker ps
     - npm i
