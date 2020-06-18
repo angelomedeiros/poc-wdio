@@ -17,6 +17,7 @@
     "@wdio/dot-reporter": "^6.1.14",
     "@wdio/local-runner": "^6.1.17",
     "@wdio/mocha-framework": "^6.1.17",
+    "@wdio/selenium-standalone-service": "^6.1.14",
     "@wdio/spec-reporter": "^6.1.14",
     "@wdio/sync": "^6.1.14",
     "chai": "^4.2.0",

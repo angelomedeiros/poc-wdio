@@ -129,15 +129,8 @@ exports.config = {
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
   reporters: [
-    'concise',
+    'spec',
     ['json', { outputDir: './reporters/json' }],
-    [
-      video,
-      {
-        saveAllVideos: true,
-        videoSlowdownMultiplier: 3,
-      },
-    ],
     [
       'allure',
       {

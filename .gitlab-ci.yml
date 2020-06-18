@@ -1,7 +1,9 @@
 image: node:14.4
 
 hello world:
+  services:
+    - selenium/standalone-chrome
   script:
     - npm i
-    - npm run test
+    - npm run test --host=selenium__standalone-chrome
     - ls -ltra
