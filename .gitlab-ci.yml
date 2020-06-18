@@ -1,5 +1,5 @@
 hello world:
   script:
-    - whomai
+    - whoami
     - pwd
     - ls -ltra
