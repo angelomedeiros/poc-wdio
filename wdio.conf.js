@@ -71,6 +71,7 @@ exports.config = {
     {
       maxInstances: 5,
       browserName: 'firefox',
+      port: 4444,
     },
   ],
   //
