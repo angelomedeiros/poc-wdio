@@ -7,3 +7,5 @@ hello world:
     - npm i
     - npm run test -- --host=selenium__standalone-chrome
     - ls -ltra
+    - docker
+    - docker ps
