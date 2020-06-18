@@ -5,6 +5,6 @@ hello world:
     - selenium/standalone-firefox
   script:
     - yarn -v
-    - npm i
-    - npm run test  --host=selenium__standalone-firefox
+    - yarn i
+    - yarn test  --host=selenium__standalone-firefox
     - ls -ltra
