@@ -1,10 +1,10 @@
-image: node:14.4
+image: selenium/standalone-firefox
 
 hello world:
   services:
-    - name: selenium/standalone-firefox
-      alias: selenium
+    - name: node:14.4
   script:
-    - yarn
-    - yarn test --host=selenium
     - ls -ltra
+    - npm -v
+    # - yarn test --hostname=selenium
+    # - ls -ltra
