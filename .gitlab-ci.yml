@@ -2,7 +2,6 @@ image: node:14.4
 
 hello world:
   script:
-    - whoami
-    - pwd
+    - npm i
+    - npm run test
     - ls -ltra
-    - npm --version
