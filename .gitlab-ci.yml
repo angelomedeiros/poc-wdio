@@ -4,7 +4,10 @@ hello world:
   image: selenium/standalone-firefox
   script:
     - ls -ltra
-    - node -v
-    - npm -v
+    - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    - sudo apt-get install -y nodejs
+    - ls -ltra
+    - npm i
+    - npm test
+    - ls -ltra
     # - yarn test --hostname=selenium
-    # - ls -ltra
