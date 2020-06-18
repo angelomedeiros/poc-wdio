@@ -2,12 +2,9 @@ image: node:14.4
 
 hello world:
   services:
-    - selenium/standalone-chrome
+    - selenium/standalone-firefox
   script:
-    - uname -a
-    - lsb_release -a
-    - docker
-    - docker ps
+    - yarn -v
     - npm i
-    - npm run test -- --host=selenium__standalone-chrome
+    - npm run test  --host=selenium__standalone-firefox
     - ls -ltra
