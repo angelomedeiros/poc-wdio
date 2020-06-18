@@ -1,0 +1,5 @@
+hello world:
+  script:
+    - whomai
+    - pwd
+    - ls -ltra
