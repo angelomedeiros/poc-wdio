@@ -1,8 +1,9 @@
 image: selenium/standalone-chrome
 
 hello world:
+  services:
+    - selenium/standalone-chrome
   script:
-    - npm -v
     - npm i
-    - npm run test --host=selenium__standalone-chrome
+    - npm run test -- --host=selenium__standalone-chrome
     - ls -ltra
