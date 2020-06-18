@@ -4,7 +4,7 @@ hello world:
   services:
     - name: selenium/standalone-firefox
   script:
-    - curl http://localhost
+    - curl selenium__standalone-firefox:4444
     - yarn
     - yarn test --hostname=selenium
     - ls -ltra
