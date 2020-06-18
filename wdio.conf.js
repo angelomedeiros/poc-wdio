@@ -1,3 +1,5 @@
+const video = require('wdio-video-reporter');
+
 exports.config = {
   //
   // ====================
@@ -129,6 +131,13 @@ exports.config = {
   reporters: [
     'concise',
     ['json', { outputDir: './reporters/json' }],
+    [
+      video,
+      {
+        saveAllVideos: true,
+        videoSlowdownMultiplier: 3,
+      },
+    ],
     [
       'allure',
       {
