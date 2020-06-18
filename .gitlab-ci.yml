@@ -1,5 +1,8 @@
 hello world:
+  services:
+    - node:14.4
   script:
     - whoami
     - pwd
     - ls -ltra
+    - npm --version
