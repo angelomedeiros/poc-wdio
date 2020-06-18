@@ -71,7 +71,7 @@ exports.config = {
     {
       maxInstances: 5,
       browserName: 'firefox',
-      port: 4444,
+      port: 4446,
     },
   ],
   //
@@ -126,7 +126,7 @@ exports.config = {
       'selenium-standalone',
       {
         args: {
-          seleniumArgs: ['-host', 'selenium', '-port', '4444'],
+          seleniumArgs: ['-host', 'selenium', '-port', '4445'],
         },
       },
     ],
