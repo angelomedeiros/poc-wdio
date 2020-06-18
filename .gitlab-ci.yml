@@ -1,6 +1,6 @@
+image: node:14.4
+
 hello world:
-  services:
-    - node:14.4
   script:
     - whoami
     - pwd
