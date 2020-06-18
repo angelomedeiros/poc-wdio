@@ -4,8 +4,8 @@ hello world:
   services:
     - selenium/standalone-chrome
   script:
+    - docker
+    - docker ps
     - npm i
     - npm run test -- --host=selenium__standalone-chrome
     - ls -ltra
-    - docker
-    - docker ps
