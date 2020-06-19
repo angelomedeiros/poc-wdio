@@ -40,5 +40,7 @@ e2e:chrome:
 
 allure:
   stage: deploy
+  variables:
+    GIT_STRATEGY: none
   script:
     - ls -ltra
