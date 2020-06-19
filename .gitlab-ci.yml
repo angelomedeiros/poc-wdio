@@ -2,6 +2,10 @@ image: node:14.4
 
 e2e:firefox:
   stage: test
+  artifacts:
+    name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
+    paths:
+      - ./reporters
   services:
     - name: selenium/standalone-firefox
   variables:
@@ -13,11 +17,15 @@ e2e:firefox:
 
 e2e:chrome:
   stage: test
-  services:
-    - name: selenium/standalone-chrome
-  variables:
-    HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
+  artifacts:
+    name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
+    paths:
+      - ./reporters
   script:
     - yarn
     - yarn test
     - ls -ltra
+  services:
+    - name: selenium/standalone-chrome
+  variables:
+    HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
