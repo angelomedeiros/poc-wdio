@@ -1,5 +1,13 @@
 image: node:14.4
 
+stages:
+  - test
+  - deploy
+
+cache:
+  paths:
+    - ./reporters
+
 e2e:firefox:
   stage: test
   artifacts:
@@ -29,3 +37,8 @@ e2e:chrome:
     - name: selenium/standalone-chrome
   variables:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
+
+allure:
+  stage: deploy
+  script:
+    - ls -ltra
