@@ -29,6 +29,7 @@ e2e:chrome:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
 
 pages:
+  image: openjdk:15-alpine
   stage: deploy
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
@@ -37,5 +38,7 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
+    - apk add --update nodejs nodejs-npm
+    - npx allure-commandline generate reporters/allure
     - ls -ltra
-    - mv ./reporters public
+    - mv ./allure-report public
