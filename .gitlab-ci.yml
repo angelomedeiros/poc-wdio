@@ -1,15 +1,12 @@
 image: node:14.4
 
-stages:
-  - test
-  - build
-
 e2e:firefox:
   stage: test
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
     paths:
       - ./reporters
+      - public
   services:
     - name: selenium/standalone-firefox
   variables:
@@ -17,10 +14,12 @@ e2e:firefox:
   script:
     - yarn
     - yarn test
+    - yarn allure:generate
+    - mv .allure-report public
     - ls -ltra
 
 e2e:chrome:
-  stage: build
+  stage: test
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
     paths:
