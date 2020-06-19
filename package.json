@@ -9,7 +9,9 @@
     "allure:generate": "allure generate reporters/allure --clean",
     "allure:open": "allure open"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "@wdio/allure-reporter": "^6.1.14",
     "@wdio/cli": "^6.1.17",

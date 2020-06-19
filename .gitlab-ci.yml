@@ -3,8 +3,10 @@ image: node:14.4
 hello world:
   services:
     - name: selenium/standalone-firefox
+  variables:
+    HOSTNAME_DRIVER: selenium__standalone-firefox
+    PORT_DRIVER: 4444
   script:
-    - curl selenium__standalone-firefox:4444
     - yarn
-    - yarn test --hostname=selenium
+    - yarn test
     - ls -ltra

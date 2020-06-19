@@ -1,4 +1,4 @@
-const video = require('wdio-video-reporter');
+require('dotenv').config();
 
 exports.config = {
   //
@@ -61,6 +61,7 @@ exports.config = {
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
       browserName: 'firefox',
+      port: Number(process.env.PORT_DRIVER),
     },
   ],
   //
