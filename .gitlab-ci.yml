@@ -4,9 +4,9 @@ stages:
   - test
   - deploy
 
-# cache:
-#   paths:
-#     - ./reporters
+cache:
+  paths:
+    - ./reporters
 
 e2e:firefox:
   stage: test
