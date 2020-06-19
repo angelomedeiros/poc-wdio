@@ -10,14 +10,6 @@ const {
   HOSTNAME_DRIVER_FIREFOX,
 } = process.env;
 
-console.log(
-  CI_JOB_NAME,
-  PORT_DRIVER_CHROME,
-  HOSTNAME_DRIVER_CHROME,
-  PORT_DRIVER_FIREFOX,
-  HOSTNAME_DRIVER_FIREFOX
-);
-
 if (CI_JOB_NAME) {
   if (CI_JOB_NAME === 'e2e:chrome') {
     dynamicConfig.capabilities = [
@@ -36,6 +28,16 @@ if (CI_JOB_NAME) {
       },
     ];
   }
+} else {
+  dynamicConfig.services = ['chromedriver'];
+  dynamicConfig.capabilities = [
+    {
+      browserName: 'chrome',
+      'goog:chromeOptions': {
+        args: ['window-size=1920,1080', '--headless'],
+      },
+    },
+  ];
 }
 
 exports.config = Object.assign(
