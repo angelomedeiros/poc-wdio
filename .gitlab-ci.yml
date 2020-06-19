@@ -16,7 +16,7 @@ e2e:firefox:
     - ls -ltra
 
 e2e:chrome:
-  stage: test
+  stage: build
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
     paths:
