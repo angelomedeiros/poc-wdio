@@ -1,5 +1,9 @@
 image: node:14.4
 
+stages:
+  - test
+  - build
+
 e2e:firefox:
   stage: test
   artifacts:
