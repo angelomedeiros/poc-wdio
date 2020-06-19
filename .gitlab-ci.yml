@@ -1,24 +1,22 @@
 image: node:14.4
 
-running tests in firefox:
+e2e:firefox:
   stage: test
   services:
     - name: selenium/standalone-firefox
   variables:
-    HOSTNAME_DRIVER: selenium__standalone-firefox
-    PORT_DRIVER: 4444
+    HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
   script:
     - yarn
     - yarn test
     - ls -ltra
 
-running tests in chrome:
+e2e:chrome:
   stage: test
   services:
     - name: selenium/standalone-chrome
   variables:
-    HOSTNAME_DRIVER: selenium__standalone-chrome
-    PORT_DRIVER: 4444
+    HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
   script:
     - yarn
     - yarn test
