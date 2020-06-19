@@ -61,8 +61,26 @@ exports.config = {
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
       browserName: 'firefox',
-      port: Number(process.env.PORT_DRIVER),
-      hostname: process.env.HOSTNAME_DRIVER,
+      port: Number(process.env.PORT_DRIVER_FIREFOX),
+      hostname: process.env.HOSTNAME_DRIVER_FIREFOX,
+    },
+    {
+      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+      // grid with only 5 firefox instances available you can make sure that not more than
+      // 5 instances get started at a time.
+      maxInstances: 5,
+      //
+      // browserName: 'chrome',
+      // 'goog:chromeOptions': {
+      //   args: ['--headless', '--disabled-gpu'],
+      // },
+      // If outputDir is provided WebdriverIO can capture driver session logs
+      // it is possible to configure which logTypes to include/exclude.
+      // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+      // excludeDriverLogs: ['bugreport', 'server'],
+      browserName: 'chrome',
+      port: Number(process.env.PORT_DRIVER_CHROME),
+      hostname: process.env.HOSTNAME_DRIVER_CHROME,
     },
   ],
   //
