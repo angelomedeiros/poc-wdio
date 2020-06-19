@@ -8,7 +8,10 @@ const {
   HOSTNAME_DRIVER_CHROME,
   PORT_DRIVER_FIREFOX,
   HOSTNAME_DRIVER_FIREFOX,
+  TESTX,
 } = process.env;
+
+console.log('XXXXXXXXXXX', TESTX);
 
 if (CI_JOB_NAME) {
   if (CI_JOB_NAME === 'e2e:chrome') {

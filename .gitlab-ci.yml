@@ -14,6 +14,7 @@ e2e:firefox:
     - name: selenium/standalone-firefox
   variables:
     HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
+    TESTX: 'YAML'
   script:
     - yarn
     - yarn test
@@ -29,6 +30,7 @@ e2e:chrome:
     - name: selenium/standalone-chrome
   variables:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
+    TESTX: 'YAML'
 
 pages:
   stage: deploy
