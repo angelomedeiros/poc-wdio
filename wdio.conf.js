@@ -62,6 +62,7 @@ exports.config = {
       // excludeDriverLogs: ['bugreport', 'server'],
       browserName: 'firefox',
       port: Number(process.env.PORT_DRIVER),
+      hostname: process.env.HOSTNAME_DRIVER,
     },
   ],
   //
