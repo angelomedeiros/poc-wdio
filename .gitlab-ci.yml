@@ -40,4 +40,4 @@ pages:
     GIT_STRATEGY: none
   script:
     - ls -ltra
-    - mv .reporters public
+    - mv ./reporters public
