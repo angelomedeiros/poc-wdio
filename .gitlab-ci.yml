@@ -4,6 +4,12 @@ stages:
   - test
   - deploy
 
+after_script:
+  - echo $TESTX
+
+before_script:
+  - echo $TESTX
+
 env stage:
   environment:
     name: stage
@@ -43,8 +49,6 @@ e2e:chrome:
   variables:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
     TESTX: GITLAB.YML
-  environment:
-    name: test
 
 pages:
   image: openjdk:15-alpine
