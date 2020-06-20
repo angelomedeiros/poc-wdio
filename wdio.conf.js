@@ -11,8 +11,6 @@ const {
   BASE_URL,
 } = process.env;
 
-console.log(process.env);
-
 if (CI_JOB_NAME) {
   if (CI_JOB_NAME === 'e2e:chrome') {
     dynamicConfig.capabilities = [
