@@ -15,7 +15,7 @@ after_script:
     - yarn
     - yarn test
   cache:
-    policy: pull
+    policy: push
     key: reporters
     paths:
       - ./reporters
@@ -39,7 +39,7 @@ pages:
   stage: deploy
   when: always
   cache:
-    policy: push
+    policy: pull
     key: reporters
     paths:
       - ./reporters
