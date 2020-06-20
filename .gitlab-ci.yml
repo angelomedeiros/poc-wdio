@@ -19,6 +19,12 @@ after_script:
     key: reporters
     paths:
       - ./reporters
+  when: always
+  artifacts:
+    expire_in: 30 days
+    name: Test
+    paths:
+      - ./reporters
 
 e2e:firefox:
   <<: *base
