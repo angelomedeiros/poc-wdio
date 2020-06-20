@@ -4,11 +4,6 @@ stages:
   - test
   - deploy
 
-before_script:
-  - ls -ltra
-after_script:
-  - ls -ltra
-
 .e2e:base: &base
   stage: test
   script:
