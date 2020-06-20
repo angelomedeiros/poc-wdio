@@ -24,6 +24,8 @@ e2e:firefox:default:
     HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
   only:
     - pushes
+  after_script:
+    - echo $HOSTNAME_DRIVER_FIREFOX
 
 e2e:chrome:default:
   <<: *base
@@ -33,6 +35,26 @@ e2e:chrome:default:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
   only:
     - pushes
+  after_script:
+    - echo $HOSTNAME_DRIVER_CHROME
+
+e2e:firefox:default2:
+  <<: *base
+  services:
+    - name: selenium/standalone-firefox
+  variables:
+    HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
+  after_script:
+    - echo $HOSTNAME_DRIVER_FIREFOX
+
+e2e:chrome:default2:
+  <<: *base
+  services:
+    - name: selenium/standalone-chrome
+  variables:
+    HOSTNAME_DRIVER_CHROME: selenium__standalone-
+  after_script:
+    - echo $HOSTNAME_DRIVER_CHROME
 
 e2e:firefox:develop:
   <<: *base
