@@ -22,9 +22,6 @@ e2e:firefox:
     - name: selenium/standalone-firefox
   variables:
     HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
-  # environment:
-  #   name: develop
-  #   url: https://angelomedeiros.gitlab.io/-/poc_project_metrics/-/jobs/604354307/artifacts/public/index.html
 
 e2e:chrome:
   <<: *base
@@ -47,3 +44,6 @@ pages:
     - apk add --update nodejs nodejs-npm
     - npx allure-commandline generate reporters/allure
     - mv ./allure-report public
+  environment:
+    name: $CI_COMMIT_REF_NAME
+    url: https://$GITLAB_USER_LOGIN.gitlab.io/-/$CI_PROJECT_TITLE/-/jobs/$CI_JOB_ID/artifacts/public/index.html
