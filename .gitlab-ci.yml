@@ -4,6 +4,16 @@ stages:
   - test
   - deploy
 
+env stage:
+  environment:
+    name: stage
+  script:
+    - echo $TESTX
+
+env default:
+  script:
+    - echo $TESTX
+
 .e2e:base: &base
   stage: test
   script:
@@ -22,6 +32,9 @@ e2e:firefox:
     - name: selenium/standalone-firefox
   variables:
     HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
+    TESTX: GITLAB.YML
+  environment:
+    name: develop
 
 e2e:chrome:
   <<: *base
@@ -29,6 +42,9 @@ e2e:chrome:
     - name: selenium/standalone-chrome
   variables:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
+    TESTX: GITLAB.YML
+  environment:
+    name: test
 
 pages:
   image: openjdk:15-alpine
