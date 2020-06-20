@@ -31,6 +31,7 @@ e2e:chrome:
 pages:
   image: openjdk:15-alpine
   stage: deploy
+  when: always
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
     paths:
