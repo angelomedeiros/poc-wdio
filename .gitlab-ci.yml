@@ -30,19 +30,19 @@ e2e:chrome--default:
   variables:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
 
-e2e:firefox:
-  <<: *base
-  services:
-    - name: selenium/standalone-firefox
-  variables:
-    HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
+# e2e:firefox:
+#   <<: *base
+#   services:
+#     - name: selenium/standalone-firefox
+#   variables:
+#     HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
 
-e2e:chrome:
-  <<: *base
-  services:
-    - name: selenium/standalone-chrome
-  variables:
-    HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
+# e2e:chrome:
+#   <<: *base
+#   services:
+#     - name: selenium/standalone-chrome
+#   variables:
+#     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
 
 pages:
   image: openjdk:15-alpine
