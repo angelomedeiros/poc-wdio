@@ -46,6 +46,8 @@ e2e:firefox:develop:
     name: develop
   only:
     - develop
+  except:
+    - pushes
 
 e2e:chrome:develop:
   <<: *e2e__chrome
@@ -53,6 +55,8 @@ e2e:chrome:develop:
     name: develop
   only:
     - develop
+  except:
+    - pushes
 
 e2e:firefox:stage:
   <<: *e2e__firefox
@@ -60,6 +64,8 @@ e2e:firefox:stage:
     name: stage
   only:
     - stage
+  except:
+    - pushes
 
 e2e:chrome:stage:
   <<: *e2e__chrome
@@ -67,6 +73,8 @@ e2e:chrome:stage:
     name: stage
   only:
     - stage
+  except:
+    - pushes
 
 e2e:firefox:test:
   <<: *e2e__firefox
@@ -74,6 +82,8 @@ e2e:firefox:test:
     name: test
   only:
     - test
+  except:
+    - pushes
 
 e2e:chrome:test:
   <<: *e2e__chrome
@@ -81,6 +91,8 @@ e2e:chrome:test:
     name: test
   only:
     - test
+  except:
+    - pushes
 
 pages:
   image: openjdk:15-alpine
