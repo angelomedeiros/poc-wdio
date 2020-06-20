@@ -16,81 +16,87 @@ stages:
     paths:
       - ./reporters
 
-.e2e:firefox: &e2e__firefox
+e2e:firefox:default:
   <<: *base
   services:
     - name: selenium/standalone-firefox
   variables:
     HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
+  only:
+    - pushes
 
-.e2e:chrome: &e2e__chrome
+e2e:chrome:default:
   <<: *base
   services:
     - name: selenium/standalone-chrome
   variables:
     HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
-
-e2e:firefox:default:
-  <<: *e2e__firefox
-  only:
-    - pushes
-
-e2e:chrome:default:
-  <<: *e2e__chrome
   only:
     - pushes
 
 e2e:firefox:develop:
-  <<: *e2e__firefox
-  environment:
-    name: develop
+  <<: *base
+  services:
+    - name: selenium/standalone-firefox
+  variables:
+    HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
   only:
     - develop
   except:
     - pushes
 
 e2e:chrome:develop:
-  <<: *e2e__chrome
-  environment:
-    name: develop
+  <<: *base
+  services:
+    - name: selenium/standalone-chrome
+  variables:
+    HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
   only:
     - develop
   except:
     - pushes
 
 e2e:firefox:stage:
-  <<: *e2e__firefox
-  environment:
-    name: stage
+  <<: *base
+  services:
+    - name: selenium/standalone-firefox
+  variables:
+    HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
   only:
     - stage
   except:
     - pushes
 
 e2e:chrome:stage:
-  <<: *e2e__chrome
-  environment:
-    name: stage
+  <<: *base
+  services:
+    - name: selenium/standalone-chrome
+  variables:
+    HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
   only:
     - stage
   except:
     - pushes
 
-e2e:firefox:test:
-  <<: *e2e__firefox
-  environment:
-    name: test
+e2e:firefox:master:
+  <<: *base
+  services:
+    - name: selenium/standalone-firefox
+  variables:
+    HOSTNAME_DRIVER_FIREFOX: selenium__standalone-firefox
   only:
-    - test
+    - master
   except:
     - pushes
 
-e2e:chrome:test:
-  <<: *e2e__chrome
-  environment:
-    name: test
+e2e:chrome:master:
+  <<: *base
+  services:
+    - name: selenium/standalone-chrome
+  variables:
+    HOSTNAME_DRIVER_CHROME: selenium__standalone-chrome
   only:
-    - test
+    - master
   except:
     - pushes
 
