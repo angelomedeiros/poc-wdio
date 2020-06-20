@@ -4,17 +4,21 @@ stages:
   - test
   - deploy
 
-cache:
-  paths:
-    - ./reporters
+before_script:
+  - ls -ltra
+after_script:
+  - ls -ltra
 
 .e2e:base: &base
   stage: test
   script:
-    - ls -ltra
     - yarn
     - yarn test
-    - ls -ltra
+  cache:
+    policy: pull
+    key: reporters
+    paths:
+      - ./reporters
 
 e2e:firefox:
   <<: *base
@@ -34,6 +38,11 @@ pages:
   image: openjdk:15-alpine
   stage: deploy
   when: always
+  cache:
+    policy: push
+    key: reporters
+    paths:
+      - ./reporters
   artifacts:
     name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME'
     paths:
@@ -41,8 +50,6 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
-    - ls -ltra
     - apk add --update nodejs nodejs-npm
     - npx allure-commandline generate reporters/allure
-    - ls -ltra
     - mv ./allure-report public
