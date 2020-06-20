@@ -20,6 +20,13 @@ cache:
   script:
     - yarn
     - yarn test
+  artifacts:
+    expire_in: 30 days
+    name: TestName
+    when: always
+    expose_as: TestExpose
+    paths:
+      - ./reporters
 
 e2e:firefox:
   <<: *base
