@@ -9,12 +9,6 @@ before_script:
 after_script:
   - ls -ltra
 
-cache:
-  policy: push
-  key: reporters
-  paths:
-    - ./reporters
-
 .e2e:base: &base
   stage: test
   script:
@@ -22,9 +16,8 @@ cache:
     - yarn test
   artifacts:
     expire_in: 30 days
-    name: TestName
+    name: 'Reporters-$CI_JOB_NAME-$CI_COMMIT_REF_NAME__$CI_COMMIT_SHORT_SHA'
     when: always
-    expose_as: TestExpose
     paths:
       - ./reporters
 
@@ -46,13 +39,8 @@ pages:
   image: openjdk:15-alpine
   stage: deploy
   when: always
-  cache:
-    policy: pull
-    key: reporters
-    paths:
-      - ./reporters
   artifacts:
-    name: '$CI_JOB_NAME-$CI_COMMIT_REF_NAME__$CI_COMMIT_SHORT_SHA'
+    name: 'Allure-$CI_JOB_NAME-$CI_COMMIT_REF_NAME__$CI_COMMIT_SHORT_SHA'
     paths:
       - public
   variables:
