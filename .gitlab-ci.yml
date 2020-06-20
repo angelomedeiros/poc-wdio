@@ -11,8 +11,10 @@ cache:
 .e2e:base: &base
   stage: test
   script:
+    - ls -ltra
     - yarn
     - yarn test
+    - ls -ltra
 
 e2e:firefox:
   <<: *base
@@ -39,6 +41,7 @@ pages:
   variables:
     GIT_STRATEGY: none
   script:
+    - ls -ltra
     - apk add --update nodejs nodejs-npm
     - npx allure-commandline generate reporters/allure
     - ls -ltra
